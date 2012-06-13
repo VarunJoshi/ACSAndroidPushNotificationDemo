@@ -1,8 +1,8 @@
-#appname: AndroidPushNotification
-#publisher: vjoshi
-#url: http://
-#image: appicon.png
-#appid: com.varun.push
-#desc: undefined
-#type: mobile
-#guid: d308c4cd-c7b1-43fe-bfa4-5e3a06af775c
+#appname:AndroidPushNotification
+#publisher:vjoshi
+#url:http://
+#image:appicon.png
+#appid:com.appcelerator.demo.push
+#desc:not specified
+#type:mobile
+#guid:d308c4cd-c7b1-43fe-bfa4-5e3a06af775c
