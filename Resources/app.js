@@ -10,6 +10,8 @@ CloudPush.enabled = true;
 var deviceToken;
 var Cloud = require('ti.cloud');
 
+Cloud.PushNotifications.unsubscribe({}, function(e){});
+
 CloudPush.retrieveDeviceToken({
     success : function deviceTokenSuccess(e) {
         alert('Device Token: ' + e.deviceToken);
@@ -23,7 +25,7 @@ CloudPush.retrieveDeviceToken({
 });
 
 function loginDefault(e) {
-    if (!Ti.App.Properties.getString('cloudUser')) {
+   /* if (!Ti.App.Properties.getString('cloudUser')) {
         Ti.App.Properties.setString('cloudUser', e)
 
         Cloud.Users.create({
@@ -47,9 +49,10 @@ function loginDefault(e) {
             }
         });
 
-    } else {
+    } *///else {
         Cloud.Users.login({
-            login : Ti.App.Properties.getString('cloudUser'),
+            login : 'clouduser',
+            //login : Ti.App.Properties.getString('cloudUser'),
             password : 'logmein'
         }, function(e) {
             if (e.success) {
@@ -58,11 +61,12 @@ function loginDefault(e) {
                 alert('Error:\\n' + ((e.error && e.message) || JSON.stringify(e)));
             }
         });
-    }
+   // }
 
 }
 
 function defaultSubscribe() {
+    
     Cloud.PushNotifications.subscribe({
         channel : 'alert',
         device_token : deviceToken,
