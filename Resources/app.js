@@ -50,6 +50,11 @@ function loginDefault(e) {
         });
 
     } *///else {
+        
+        /*
+         * This user has been created in the cloud console so here you can just log in with it, or 
+         * you can just create a new user here and login with it
+         */
         Cloud.Users.login({
             login : 'clouduser',
             //login : Ti.App.Properties.getString('cloudUser'),
